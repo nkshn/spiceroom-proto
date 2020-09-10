@@ -1,0 +1,14 @@
+.news-link {
+  text-decoration: none;
+  color: black;
+}
+.news-link:hover .news-image {
+  border-radius: 25px;
+  box-shadow: 3px 3px 6px #676767;
+}
+.news-link:hover .news-title {
+  text-shadow: 3px 3px 6px #676767;
+}
+.news-link:hover .news-text {
+  text-shadow: 3px 3px 6px #676767;
+}

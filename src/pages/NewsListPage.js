@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import NewsItem from '../components/NewsItem';
 import { Link } from 'react-router-dom';
+import './NewsListPage.css';
 
 function NewsListPage() {
 
-  let fetchLimit = 3;
+  let fetchLimit = 5;
 
   const [posts, setPosts] = useState([]);
   const [images, setImages] = useState([]);
@@ -27,10 +28,10 @@ function NewsListPage() {
   let arrayOfImagesOnlyWithThumbnailUrl = images.map(({ thumbnailUrl }) => thumbnailUrl);
 
   return (
-    <div style={{ textAlign: "left", marginBottom: 20, width: 1000, margin: "0 auto", marginBottom: 50, marginTop: 50 }}>
+    <div className="container">
       {
         posts.map((item, index) => (
-          <Link key={index} to={`/news/${item.id}`}>
+          <Link key={index} to={`/news/${item.id}`} className="news-link">
             <NewsItem
               id={item.id}
               title={item.title}

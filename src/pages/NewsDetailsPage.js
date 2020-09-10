@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import './NewsDetailsPage.css';
 
 function NewsDetailsPage({ match }) {
   const [post, setPosts] = useState({});
@@ -20,11 +22,22 @@ function NewsDetailsPage({ match }) {
   };
 
   return (
-    <div>
-      <h1>This is <b>News Details</b> Page</h1>
-      <h4>post title: {post.title}</h4>
-      <h4>post text: {post.body}</h4>
-      <img src={image.url} />
+    <div className="container news-details_container">
+      <Link to="/news" className="news-details_backwards-link">
+        <p>&lt; Повернутися назад</p>
+      </Link>
+      <h4 className="news-details_title">{post.title}</h4>
+      <img src={image.url} className="news-details_img" />
+      <h4 className="news-details_text">{post.body}</h4>
+      <h4 className="news-details_text">{post.body}</h4>
+      <h4 className="news-details_text">{post.body}</h4>
+      <h4 className="news-details_text">{post.body}</h4>
+      <h4 className="news-details_text">{post.body}</h4>
+      <h4 className="news-details_text">{post.body}</h4>
+      <h4 className="news-details_text">{post.body}</h4>
+      <h4 className="news-details_text">{post.body}</h4>
+      <h4 className="news-details_text">{post.body}</h4>
+      <h4 className="news-details_text">{post.body}</h4>
     </div>
   )
 }
