@@ -1,13 +1,6 @@
 .products-page_container {
   text-align: center;
 }
-.products-page_header {
-  text-align: left;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 30px;
-  font-weight: 700;
-}
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

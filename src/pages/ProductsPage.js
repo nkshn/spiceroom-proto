@@ -9,7 +9,7 @@ function ProductsPage() {
 
   return (
     <div className="container products-page_container">
-      <p className="products-page_header">Products</p>
+      <p className="header-title">Products</p>
       <div className="grid">
         {
           productsData.map(item => {

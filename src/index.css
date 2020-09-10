@@ -19,6 +19,9 @@ body {
   background: #555;
 }
 
+button:focus {
+  outline: none;
+}
 .container {
   text-align: left;
   margin-bottom: 20px;
@@ -27,7 +30,10 @@ body {
   margin-bottom: 50px;
   margin-top: 50px;
 }
-
-button:focus {
-  outline: none;
+.header-title {
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 30px;
+  font-weight: 700;
 }

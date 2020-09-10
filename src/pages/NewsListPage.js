@@ -29,6 +29,7 @@ function NewsListPage() {
 
   return (
     <div className="container">
+      <p className="header-title">News</p>
       {
         posts.map((item, index) => (
           <Link key={index} to={`/news/${item.id}`} className="news-link">
