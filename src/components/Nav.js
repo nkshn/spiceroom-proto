@@ -10,9 +10,9 @@ export default function Nav() {
         <p className="nav-logo">The Spiceroom</p>
       </Link>
       <ul className="nav-links">
-        <Link className="nav-links_title" to="/about"><li>About us</li></Link>
         <Link className="nav-links_title" to="/news"><li>News</li></Link>
         <Link className="nav-links_title" to="/products"><li>Products</li></Link>
+        <Link className="nav-links_title" to="/cart"><li>Cart</li></Link>
       </ul>
     </nav>
   )
