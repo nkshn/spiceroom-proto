@@ -7,4 +7,6 @@
   grid-column-gap: 45px;
   grid-row-gap: 40px;
   grid-template-rows: auto; /* of fixed value ex. 450px */
+  padding-left: 15px;
+  padding-right: 15px;
 }

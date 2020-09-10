@@ -5,6 +5,7 @@ import CartPage from './pages/CartPage';
 import NewsListPage from './pages/NewsListPage';
 import NewsDetailsPage from './pages/NewsDetailsPage';
 import ProductsPage from './pages/ProductsPage';
+import ProductsDetailsPage from './pages/ProductsDetailsPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
           <Route path="/cart" component={CartPage} />
           <Route path="/news" exact component={NewsListPage} />
           <Route path="/news/:id" component={NewsDetailsPage} />
-          <Route path="/products" component={ProductsPage} />
+          <Route path="/products" exact component={ProductsPage} />
+          <Route path="/products/:id" component={ProductsDetailsPage} />
         </Switch>
       </div>
     </Router>
