@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import RedirectingTo from '../components/RedirectingTo';
 import './NewsDetailsPage.css';
 
 function NewsDetailsPage({ match }) {
@@ -23,9 +23,7 @@ function NewsDetailsPage({ match }) {
 
   return (
     <div className="container news-details_container">
-      <Link to="/news" className="news-details_backwards-link">
-        <p>&lt; Повернутися назад</p>
-      </Link>
+      <RedirectingTo linkTo="/news" />
       <h4 className="news-details_title">{post.title}</h4>
       <img src={image.url} className="news-details_img" alt="description" />
       <h4 className="news-details_text">{post.body}</h4>
