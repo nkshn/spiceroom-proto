@@ -5,6 +5,9 @@
   min-height: 10vh;
   background: rgb(73, 79, 82);
   color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .nav-logo {

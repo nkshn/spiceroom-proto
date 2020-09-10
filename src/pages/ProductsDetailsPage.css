@@ -1,10 +1,9 @@
-.productsDetails-container {
-  width: 775px;
-}
 .productsDetails-page_container {
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
+  width: 775px;
+  margin: 0 auto;
 }
 .productsDetails-page_img {
   width: 175px;

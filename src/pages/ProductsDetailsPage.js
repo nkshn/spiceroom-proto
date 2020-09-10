@@ -9,7 +9,7 @@ function ProductsDetailsPage({ match }) {
   const productData = PRODUCTS_DATA.find(item => item.id === parseInt(match.params.id));
 
   return (
-    <div className="container productsDetails-container">
+    <div className="container">
       <RedirectingTo linkTo="/products" />
       <div className="productsDetails-page_container">
         <img src={productData.image} className="productsDetails-page_img" alt="description" />
