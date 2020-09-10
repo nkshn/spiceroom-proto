@@ -5,7 +5,7 @@ import './NewsItem.css';
 function NewsItem(props) {
   return (
     <div className="news-main_container">
-      <img src={props.imgSrc} className="news-image" />
+      <img src={props.imgSrc} className="news-image" alt="description" />
       <div className="news-text_container">
         <p className="news-title">{props.title}</p>
         <p className="news-text">{props.text}</p>

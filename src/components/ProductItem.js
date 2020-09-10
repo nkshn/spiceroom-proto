@@ -10,7 +10,7 @@ function ProductItem(props) {
           <h4 className="products-page_title">{props.title}</h4>
           <h4 className="products-page_price">Price: ${props.price}</h4>
         </div>
-        <img className="products-page_img" src={props.image} />
+        <img className="products-page_img" src={props.image} alt="description" />
         <p className="products-page_text">{props.description}</p>
         <ul className="products-page_ul">
           <li className="products-page_ul-li">

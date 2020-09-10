@@ -27,7 +27,7 @@ function NewsDetailsPage({ match }) {
         <p>&lt; Повернутися назад</p>
       </Link>
       <h4 className="news-details_title">{post.title}</h4>
-      <img src={image.url} className="news-details_img" />
+      <img src={image.url} className="news-details_img" alt="description" />
       <h4 className="news-details_text">{post.body}</h4>
       <h4 className="news-details_text">{post.body}</h4>
       <h4 className="news-details_text">{post.body}</h4>
