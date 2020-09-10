@@ -3,6 +3,9 @@
 # vscode settings
 .vscode
 
+# todo
+todo.txt
+
 # dependencies
 /node_modules
 /.pnp
