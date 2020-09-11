@@ -1,26 +1,42 @@
 import React from 'react';
 import './CartPage.css';
 import { useSelector } from 'react-redux';
-// import { increment, decrement } from '../store/actions/numberActions';
 
 function CartPage() {
 
   const cart = useSelector(state => state.cart.products);
   const totalPrice = useSelector(state => state.cart.totalPrice);
-  console.log(cart);
 
   return (
-    <div className="container cart-page_container">
-      <p>This is <b>Cart</b> page.</p>
-      {
-        cart.map((item, index) => (
-          <div key={index}>
-            <p>Title: {item.title} | Quantity: {item.quantity} | ${item.sum}</p>
-          </div>
-        ))
-      }
-
-      <p>Total Cart Price: {totalPrice}</p>
+    <div className="container">
+      <h3 className="header-title">shopping cart</h3>
+      <div className="cart-page_grid">
+        {
+          cart.map((item, index) => (
+            <div key={index} className="cart-item_container">
+              <div className="cart-item_img-block">
+                <img src="https://via.placeholder.com/150/24f355" />
+              </div>
+              <div className="cart-item_text-block">
+                <h4 className="cart-item_text-block-title">{item.title}</h4>
+                <p className="cart-item_text-block-description">description</p>
+              </div>
+              <div className="cart-item_quantity-block">
+                <button className="cart-item_quantity-button quantity-decrease">-</button>
+                <p className="cart-item_quantity-button-text">{item.quantity}</p>
+                <button className="cart-item_quantity-button quantity-increase">+</button>
+              </div>
+              <div className="cart-item_price-block">
+                <p>${item.sum}</p>
+              </div>
+              <div className="cart-item_clear-block">
+                <button>x</button>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+      <p>Total Value: ${totalPrice}</p>
     </div>
   )
 }

@@ -1,5 +1,9 @@
 Front-End:
-  ❌ Add Skeleton for News
+  ❌ Add Skeleton for News  
   ❌ Fix redirect bug ProductsPage -> ProductsDetailsPage
+  ❌ Add Cart Badge
+  ❌ Add No Cart Items
+  ❌ Add styling of TotalSum
+  ❌ Add quantity control in ProductsPage -> component: ProductItem
 
 Back-End:
