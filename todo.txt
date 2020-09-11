@@ -1,0 +1,5 @@
+Front-End:
+  ❌ Add Skeleton for News
+  ❌ Fix redirect bug ProductsPage -> ProductsDetailsPage
+
+Back-End:
