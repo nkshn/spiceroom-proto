@@ -1,23 +1,40 @@
-// import { addProductToCart } from '../actions/actions';
+import CartItem from '../../model/cartItem';
 
-/*const initialState = {
+const initialState = {
   products: [],
-  totalPrice: 0
-}*/
+  totalPrice: 0,
+}
 
-const cartReducer = (state = 0, actions) => {
-  switch (actions.type) {
-    case 'INCREMENT':
-      // return state.totalPrice + 200;
-      // return state + 200;
-      return state + actions.payload[1]; // 10
-    case 'DECREMENT':
-      // return state.totalPrice - 200;
-      return state - 200;
-    default:
-      // return state.totalPrice + 1;
-      return state + 1;
+const cartReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'ADD_PRODUCT_TO_CART':
+      let arr = [...state.products];
+      let price = action.payload.price;
+
+      let item = new CartItem(
+        action.payload.id,
+        action.payload.title,
+        action.payload.price,
+        1,
+        action.payload.price,
+      );
+
+      let isAllreadyInCart = arr.findIndex(item => item.id === action.payload.id);
+      if (isAllreadyInCart < 0) {
+        arr.push(item);
+      } else {
+        let index = state.products.findIndex(item => action.payload.id === item.id);
+        arr[index].quantity++;
+        arr[index].sum = arr[index].quantity * action.payload.price;
+      }
+
+      return {
+        ...state,
+        products: arr,
+        totalPrice: state.totalPrice + price
+      };
   }
+  return state
 }
 
 export default cartReducer;

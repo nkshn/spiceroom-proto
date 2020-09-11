@@ -1,22 +1,26 @@
 import React from 'react';
 import './CartPage.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from '../store/actions/index';
+import { useSelector } from 'react-redux';
+// import { increment, decrement } from '../store/actions/numberActions';
 
 function CartPage() {
 
-  const totalPrice = useSelector(state => state.cart);
-  const isLogged = useSelector(state => state.isLogged);
-  const dispatch = useDispatch();
+  const cart = useSelector(state => state.cart.products);
+  const totalPrice = useSelector(state => state.cart.totalPrice);
+  console.log(cart);
 
   return (
     <div className="container cart-page_container">
-      <p>This is <b>Cart</b> page</p>
+      <p>This is <b>Cart</b> page.</p>
       {
-        isLogged === true ? <p>Total price: {totalPrice}</p> : <p>User do not log in</p>
+        cart.map((item, index) => (
+          <div key={index}>
+            <p>Title: {item.title} | Quantity: {item.quantity} | ${item.sum}</p>
+          </div>
+        ))
       }
-      <button onClick={() => dispatch(increment(10, 20))}>+</button>
-      <button onClick={() => dispatch(decrement())}>-</button>
+
+      <p>Total Cart Price: {totalPrice}</p>
     </div>
   )
 }

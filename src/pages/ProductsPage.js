@@ -16,14 +16,7 @@ function ProductsPage() {
             return (
               <ProductItem
                 key={item.id}
-                id={item.id}
-                title={item.title}
-                description={item.description}
-                price={item.price}
-                image={item.image}
-                fryingDegree={item.fryingDegree}
-                aroma={item.aroma}
-                taste={item.taste}
+                product={item}
               />
             )
           })
