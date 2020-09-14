@@ -51,6 +51,9 @@
   font-size: 15px;
   border: 0.4px solid #777;
 }
+.cart-item_quantity-button:hover {
+  cursor: pointer;
+}
 .quantity-decrease {
   padding-left: 17px;
   padding-right: 12px;

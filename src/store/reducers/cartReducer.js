@@ -5,6 +5,14 @@ const initialState = {
   totalPrice: 0,
 }
 
+/*
+  this.id = id;
+  this.title = title;
+  this.price = price;
+  this.quantity = quantity;
+  this.sum = sum;
+*/
+
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_PRODUCT_TO_CART':
@@ -33,8 +41,38 @@ const cartReducer = (state = initialState, action) => {
         products: arr,
         totalPrice: state.totalPrice + price
       };
+
+    case 'INCREASE_PRODUCT_CART_QUANTITY':
+      let array = [...state.products];
+      
+      let indexIncrease = state.products.findIndex(item => action.payload[0] === item.id);
+      array[indexIncrease].quantity++;
+
+      console.log("increase id: " + action.payload[0]);
+      
+      console.log("increase price: " + action.payload[1]);
+      return {
+        ...state,
+        products: array,
+        totalPrice: state.totalPrice + action.payload[1]
+      };
+
+    case 'DECREASE_PRODUCT_CART_QUANTITY':
+      let arrayD = [...state.products];
+      let indexDecrease = state.products.findIndex(item => action.payload[0] === item.id);
+
+      arrayD[indexDecrease].quantity--;
+
+      console.log("decrease id: " + action.payload[0]);
+      console.log("decrease price: " + action.payload[1]);
+
+      return {
+        ...state,
+        products: arrayD,
+        totalPrice: state.totalPrice - action.payload[1]
+      };
   }
-  return state
+  return state;
 }
 
 export default cartReducer;

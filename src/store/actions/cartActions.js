@@ -4,3 +4,15 @@ export const addProductToCart = (product) => {
     payload: product
   }
 }
+export const increaseProductCartQuantity = (productId, productPrice) => {
+  return {
+    type: 'INCREASE_PRODUCT_CART_QUANTITY',
+    payload: [productId, productPrice]
+  }
+}
+export const decreaseProductCartQuantity = (productId, productPrice) => {
+  return {
+    type: 'DECREASE_PRODUCT_CART_QUANTITY',
+    payload: [productId, productPrice]
+  }
+}

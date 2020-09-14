@@ -1,11 +1,14 @@
 import React from 'react';
 import './CartPage.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { increaseProductCartQuantity, decreaseProductCartQuantity } from '../store/actions/cartActions';
 
 function CartPage() {
 
   const cart = useSelector(state => state.cart.products);
   const totalPrice = useSelector(state => state.cart.totalPrice);
+
+  const dispatch = useDispatch();
 
   return (
     <div className="container">
@@ -22,9 +25,9 @@ function CartPage() {
                 <p className="cart-item_text-block-description">description</p>
               </div>
               <div className="cart-item_quantity-block">
-                <button className="cart-item_quantity-button quantity-decrease">-</button>
+                <button className="cart-item_quantity-button quantity-decrease" onClick={() => dispatch(decreaseProductCartQuantity(item.id, item.price))}>-</button>
                 <p className="cart-item_quantity-button-text">{item.quantity}</p>
-                <button className="cart-item_quantity-button quantity-increase">+</button>
+                <button className="cart-item_quantity-button quantity-increase" onClick={() => dispatch(increaseProductCartQuantity(item.id, item.price))}>+</button>
               </div>
               <div className="cart-item_price-block">
                 <p>${item.sum}</p>
@@ -35,8 +38,8 @@ function CartPage() {
             </div>
           ))
         }
+        <p>Total Value: ${totalPrice}</p>
       </div>
-      <p>Total Value: ${totalPrice}</p>
     </div>
   )
 }
