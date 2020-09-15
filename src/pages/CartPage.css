@@ -94,3 +94,6 @@
   position: relative;
   top: -2px;
 }
+.cart-item_clear-block button:hover {
+  cursor: pointer;
+}

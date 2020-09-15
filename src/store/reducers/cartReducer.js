@@ -44,13 +44,13 @@ const cartReducer = (state = initialState, action) => {
 
     case 'INCREASE_PRODUCT_CART_QUANTITY':
       let array = [...state.products];
-      
+
       let indexIncrease = state.products.findIndex(item => action.payload[0] === item.id);
       array[indexIncrease].quantity++;
 
       console.log("increase id: " + action.payload[0]);
-      
       console.log("increase price: " + action.payload[1]);
+
       return {
         ...state,
         products: array,
