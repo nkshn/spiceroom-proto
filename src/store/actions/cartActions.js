@@ -16,3 +16,9 @@ export const decreaseProductCartQuantity = (productId, productPrice) => {
     payload: [productId, productPrice]
   }
 }
+export const deleteProductFromCart = (productId, productSum) => {
+  return {
+    type: 'DELETE_PRODUCT_FROM_CART',
+    payload: [productId, productSum]
+  }
+}

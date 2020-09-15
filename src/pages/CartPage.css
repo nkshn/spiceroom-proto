@@ -50,9 +50,12 @@
   padding-bottom: 7px;
   font-size: 15px;
   border: 0.4px solid #777;
+  transition: all 0.2s;
 }
 .cart-item_quantity-button:hover {
   cursor: pointer;
+  background: #777;
+  color: white;
 }
 .quantity-decrease {
   padding-left: 17px;
@@ -77,12 +80,22 @@
   border-top: 0.4px solid #777;
   border-bottom: 0.4px solid #777;
 }
-.cart-item_price-block {
+.cart-item_pricing-block {
   text-align: center;
 }
-.cart-item_price-block p {
+.cart-item_pricing-block-price {
   font-weight: 700;
   font-size: 23px;
+  margin: 0px;
+  margin-top: 3px;
+}
+.cart-item_pricing-block-sum {
+  font-size: 12px;
+  font-weight: 400;
+  color: #777;
+  position: relative;
+  top: -3px;
+  margin: 0px;
 }
 .cart-item_clear-block {
   text-align: center;

@@ -5,14 +5,6 @@ const initialState = {
   totalPrice: 0,
 }
 
-/*
-  this.id = id;
-  this.title = title;
-  this.price = price;
-  this.quantity = quantity;
-  this.sum = sum;
-*/
-
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_PRODUCT_TO_CART':
@@ -44,12 +36,10 @@ const cartReducer = (state = initialState, action) => {
 
     case 'INCREASE_PRODUCT_CART_QUANTITY':
       let array = [...state.products];
-
       let indexIncrease = state.products.findIndex(item => action.payload[0] === item.id);
-      array[indexIncrease].quantity++;
 
-      console.log("increase id: " + action.payload[0]);
-      console.log("increase price: " + action.payload[1]);
+      array[indexIncrease].quantity++;
+      array[indexIncrease].sum = array[indexIncrease].quantity * action.payload[1];
 
       return {
         ...state,
@@ -61,14 +51,28 @@ const cartReducer = (state = initialState, action) => {
       let arrayD = [...state.products];
       let indexDecrease = state.products.findIndex(item => action.payload[0] === item.id);
 
-      arrayD[indexDecrease].quantity--;
-
-      console.log("decrease id: " + action.payload[0]);
-      console.log("decrease price: " + action.payload[1]);
+      if (arrayD[indexDecrease].quantity <= 1) {
+        arrayD.splice(indexDecrease, 1); // Deleting Item from cart when Quantity of Item is 0
+      } else {
+        arrayD[indexDecrease].quantity--;
+        arrayD[indexDecrease].sum = arrayD[indexDecrease].quantity * action.payload[1];
+      }
 
       return {
         ...state,
         products: arrayD,
+        totalPrice: state.totalPrice - action.payload[1]
+      };
+
+    case 'DELETE_PRODUCT_FROM_CART':
+      let arrDelete = [...state.products];
+      let findNeededIndex = state.products.findIndex(item => action.payload[0] === item.id)
+
+      arrDelete.splice(findNeededIndex, 1);
+
+      return {
+        ...state,
+        products: arrDelete,
         totalPrice: state.totalPrice - action.payload[1]
       };
   }
