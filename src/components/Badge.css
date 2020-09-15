@@ -1,0 +1,18 @@
+.badge-div {
+  z-index: 10;
+  position: relative;
+  width: 21px;
+  background: #f44336;
+  height: 21px;
+  text-align: center;
+  border: 0.5px solid #777;
+  border-radius: 20px;
+  top: -8px;
+  right: 7px;
+}
+.badge-div p {
+  font-size: 14px;
+  font-weight: 600;
+  position: relative;
+  letter-spacing: -2px;
+}

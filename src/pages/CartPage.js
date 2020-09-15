@@ -33,7 +33,7 @@ function CartPage() {
             return (
               <div key={index} className="cart-item_container">
                 <div className="cart-item_img-block">
-                  <img src={productsData[0].image} />
+                  <img src={productsData[0].image} alt="description" />
                 </div>
                 <div className="cart-item_text-block">
                   <h4 className="cart-item_text-block-title">{item.title}</h4>
