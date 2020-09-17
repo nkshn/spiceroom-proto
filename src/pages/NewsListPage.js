@@ -9,6 +9,7 @@ function NewsListPage() {
 
   const [posts, setPosts] = useState([]);
   const [images, setImages] = useState([]);
+  const [isAlreadyLoaded, setIsAlreadyLoaded] = useState(false);
 
   useEffect(() => {
     fetchingItems();
@@ -23,6 +24,9 @@ function NewsListPage() {
 
     setPosts(formatedPosts);
     setImages(formatedImages);
+    setTimeout(() => {
+      setIsAlreadyLoaded(true);
+    }, 3000) // imitation off slow fetching data from server
   }
 
   let arrayOfImagesOnlyWithThumbnailUrl = images.map(({ thumbnailUrl }) => thumbnailUrl);
@@ -34,10 +38,11 @@ function NewsListPage() {
         posts.map((item, index) => (
           <Link key={index} to={`/news/${item.id}`} className="news-link">
             <NewsItem
-              id={item.id}
               title={item.title}
               text={item.body}
-              imgSrc={arrayOfImagesOnlyWithThumbnailUrl[item.id - 1]} />
+              imgSrc={arrayOfImagesOnlyWithThumbnailUrl[item.id - 1]}
+              isAlreadyLoaded={isAlreadyLoaded}
+            />
           </Link>
         ))
       }
