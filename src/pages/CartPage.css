@@ -5,6 +5,41 @@
 .cart-page_container {
   text-align: center;
 }
+.cart-item_totalPrice-block {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 35px;
+  padding-right: 35px;
+  background: #9e9e9e;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 15px;
+  align-items: center;
+}
+.cart-item_totalPrice-text {
+  font-size: 20px;
+  font-weight: 300;
+  color: white;
+}
+.cart-item_totalPrice-btn {
+  border: none;
+  border-radius: 7px;
+  background: #3b8e3f;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+.cart-item_totalPrice-btn:hover {
+  cursor: pointer;
+  border-radius: 10px;
+  background: #38823b;
+}
 .cart-item_container {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr 1fr 1fr;

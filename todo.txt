@@ -2,6 +2,6 @@ Front-End:
   ✅ Add Skeleton for News  
   ✅ Fix redirect bug ProductsPage -> ProductsDetailsPage
   ✅ Add Cart Badge
-  ❌ Add styling of TotalSum
+  ✅ Add styling of TotalSum
 
 Back-End:

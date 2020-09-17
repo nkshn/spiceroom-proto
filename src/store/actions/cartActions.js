@@ -22,3 +22,8 @@ export const deleteProductFromCart = (productId, productSum) => {
     payload: [productId, productSum]
   }
 }
+export const clearCart = () => {
+  return {
+    type: 'CLEAR_CART',
+  }
+}

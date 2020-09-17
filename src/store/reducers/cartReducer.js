@@ -75,6 +75,9 @@ const cartReducer = (state = initialState, action) => {
         products: arrDelete,
         totalPrice: state.totalPrice - action.payload[1]
       };
+
+    case 'CLEAR_CART':
+      return state = initialState
   }
   return state;
 }

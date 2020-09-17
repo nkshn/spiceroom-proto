@@ -4,7 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   increaseProductCartQuantity,
   decreaseProductCartQuantity,
-  deleteProductFromCart
+  deleteProductFromCart,
+  clearCart
 } from '../store/actions/cartActions';
 import { PRODUCTS_DATA } from '../data/dummy-data';
 
@@ -17,7 +18,11 @@ function CartPage() {
 
   return (
     <div className="container">
-      <h3 className="header-title">shopping cart</h3>
+      <p className="header-title">shopping cart</p>
+      <div className="cart-item_totalPrice-block">
+        <p className="cart-item_totalPrice-text">Total Value: <b>${totalPrice}</b></p>
+        <button className="cart-item_totalPrice-btn" onClick={() => dispatch(clearCart())}>clear cart</button>
+      </div>
       <div className="cart-page_grid">
         {
           cart.map((item, index) => {
@@ -63,7 +68,6 @@ function CartPage() {
             )
           })
         }
-        <p>Total Value: ${totalPrice}</p>
       </div>
     </div>
   )
