@@ -40,7 +40,7 @@ function ProductItem(props) {
           </li>
         </ul>
         <div className="products-page_btns">
-          <Link to={`/products/${props.id}`}><button className="products-page_btn-view">View Details</button></Link>
+          <Link to={`/products/${product.id}`}><button className="products-page_btn-view">View Details</button></Link>
           <button className="products-page_btn-cart" onClick={() => dispatch(addProductToCart(product))}>To Cart</button>
         </div>
       </div>
